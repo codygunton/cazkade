@@ -1,6 +1,8 @@
 # Copyright 2023 Flavien Solt, ETH Zurich.
 # Licensed under the General Public License, Version 3.0, see LICENSE for details.
 # SPDX-License-Identifier: GPL-3.0-only
+# Substantially modified in 2025 by Cody Gunton to add set up fuzzing of zkVMs using Honggfuzz
+
 
 FROM rust:1.85 AS build
 RUN mkdir /bootstrap && \
@@ -49,9 +51,6 @@ ENV RUSTUP_HOME=$PREFIX_CASCADE/.rustup
 ENV RUSTEXEC="$CARGO_HOME/bin/rustc"
 ENV RUSTUPEXEC="$CARGO_HOME/bin/rustup"
 ENV CARGOEXEC="$CARGO_HOME/bin/cargo"
-
-# TODO: remove old rust install 
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # Install some Python dependencies for cascade
 RUN pip3 install tqdm numpy filelock
