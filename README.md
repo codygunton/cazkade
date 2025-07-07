@@ -40,7 +40,7 @@ to
             InsnKind::Add => rs1.wrapping_sub(rs2), // NOPE
             InsnKind::Sub => rs1.wrapping_sub(rs2),
 ```
-will produce crashes (possibly fewer than you might expect, since `addi `is more common then `add` in Cascade-generated examples).
+will produce crashes (possibly fewer than you might expect, since `addi` is more common then `add` in Cascade-generated examples).
 
 ## Regarding our fork
 We are generating targets with a fork of the original Cascade library, which is geared toward fuzzing executable hardware specs. We only use a small part of that library, the test case generation. The fork makes several changes, chiefly: shutting off privileged instructions and fence instructions, which are both currently not supported in RISC Zero.
