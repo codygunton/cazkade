@@ -1,5 +1,5 @@
 # Cazkade
-A RISC-V ZKVM fuzzing component built from from [Cascade](https://comsec.ethz.ch/research/hardware-design-security/cascade-cpu-fuzzing-via-intricate-program-generation/) by Solt, Ceesay-Seitz and Razavi (see also the authors' [Dockerfile](https://github.com/comsec-group/cascade-artifacts) and [core library](https://github.com/cascade-artifacts-designs/cascade-meta)) and [Honggfuzz](https://github.com/google/honggfuzz).
+A RISC-V ZKVM fuzzer built from from [Cascade](https://comsec.ethz.ch/research/hardware-design-security/cascade-cpu-fuzzing-via-intricate-program-generation/) by Solt, Ceesay-Seitz and Razavi (see also the authors' [Dockerfile](https://github.com/comsec-group/cascade-artifacts) and [core library](https://github.com/cascade-artifacts-designs/cascade-meta)) and [Honggfuzz](https://github.com/google/honggfuzz).
 
 Currently this is a proof of concept targeting RISC Zero's [r0vm](https://github.com/risc0/risc0/tree/main/risc0/r0vm).
 
