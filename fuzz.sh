@@ -11,6 +11,9 @@ fi
 # Note: in practice, 30s is too slow for the largest examples on 4 threads per examle. This result
 # in crashes because we supply the tmout_sigvalrm flag.
 
+# The --statsfile flag seems broken, so we make our own flag to log metrics from the fuzzing run
+stats_file="stats_$(date -u +%Y%m%d_%H%M%S).log"
+
 RAYON_NUM_THREADS=4 ./honggfuzz/honggfuzz \
   --threads 48 \
   --timeout 30 \
@@ -23,4 +26,5 @@ RAYON_NUM_THREADS=4 ./honggfuzz/honggfuzz \
   --tmout_sigvtalrm \
   --run_time 86400 \
   --mutations_per_run 128 \
-  -- /workspace/risc0/target/release/r0vm --test-elf ___FILE___
+  -- /workspace/risc0/target/release/r0vm --test-elf ___FILE___ \
+  2>&1 | tee "$stats_file"
