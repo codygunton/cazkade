@@ -56,3 +56,12 @@ The library has its own parallel generation strategy. Our goal is to use Honggfu
 Many improvements are possible here. Among those are: coverage measurement; use of "persistent mode"; changes to Cascade to make it more friendly to the sort of parallelism we use; stripping away of unneeded parts of Cascade; a more optimized rewrite of the Cascade generator; augmentation of the generation to support coverage guidance (the randomness in the test binaries could be surfaced to allow the fuzzer to drive example generation in a continuous way).
 
 Possible extensions of course involve running the fuzzer on more targets and extending the execution to include proof construction and verification.
+
+## License
+
+Licensed under either of
+
+* Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+* MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+
+at your option.
